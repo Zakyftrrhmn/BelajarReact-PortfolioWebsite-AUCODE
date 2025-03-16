@@ -4,6 +4,21 @@ import { CgNametag } from "react-icons/cg";
 import { HiMenuAlt1 } from "react-icons/hi";
 
 const nav = () => {
+  const links = [
+    {
+      link: "Skills",
+      section: "#Skills",
+    },
+    {
+      link: "Projects",
+      section: "#Projects",
+    },
+    {
+      link: "Testimonials",
+      section: "#Testimonials",
+    },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   function openMenu() {
@@ -28,24 +43,21 @@ const nav = () => {
         </div>
         <div className="space-x-4">
           <div className="hidden lg:block space-x-2">
-            <a
-              href=""
-              className="text-white hover:bg-indigo-800 rounded-full px-5 py-2 text-xl"
-            >
-              Skills
-            </a>
-            <a
-              href=""
-              className="text-white hover:bg-indigo-800 rounded-full px-5 py-2 text-xl"
-            >
-              Projects
-            </a>
-            <a
-              href=""
-              className="text-white hover:bg-indigo-800 rounded-full px-5 py-2 text-xl"
-            >
-              Testimonials
-            </a>
+            <ul className="flex">
+              {links.map((link, index) => {
+                return (
+                  <li key={index} className="text-white text-xl  mb-2">
+                    <a
+                      href={link.index}
+                      className="text-white hover:bg-indigo-800 rounded-full px-5 py-2 text-xl"
+                    >
+                      {link.link}
+                    </a>
+                  </li>
+                );
+              })}
+              <li></li>
+            </ul>
           </div>
           <div className="lg:hidden">
             {isOpen ? (
@@ -69,17 +81,13 @@ const nav = () => {
         {isOpen ? (
           <div className="flex justify-between ml-10">
             <ul>
-              <li className="text-white text-xl  mb-2">
-                <a href="">Skills</a>
-              </li>
-
-              <li className="text-white text-xl  mb-2">
-                <a href="">Projects</a>
-              </li>
-
-              <li className="text-white text-xl  mb-2">
-                <a href="">Testimonials</a>
-              </li>
+              {links.map((link, index) => {
+                return (
+                  <li key={index} className="text-white text-xl  mb-2">
+                    <a href={link.section}>{link.link}</a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ) : (

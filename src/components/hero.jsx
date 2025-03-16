@@ -20,7 +20,7 @@ const hero = () => {
           corporis officiis quia deserunt.
         </p>
       </div>
-      <div className="w-1/3 items-center w-fit">
+      <div className="lg:w-1/3 w-fit items-center">
         <img
           src={HeroPic}
           alt=""
@@ -29,7 +29,7 @@ const hero = () => {
           className="rounded-full w-full border-8 border-white"
         />
       </div>
-      <div className="w-1/3 w-fit">
+      <div className="lg:w-1/3 w-fit ">
         <p className="text-4xl mb-4">About Me</p>
         <p className="text-slate-300">
           Let's build quality in programming ad design with our services
