@@ -4,7 +4,7 @@ import { CgNametag } from "react-icons/cg";
 import { HiMenuAlt1 } from "react-icons/hi";
 
 const nav = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   function openMenu() {
     setIsOpen(true);
